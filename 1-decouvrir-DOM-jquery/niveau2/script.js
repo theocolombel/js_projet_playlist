@@ -1,21 +1,34 @@
 var listOfMovie = [];
-
 $(document).ready(function(){
 
 
-// completer le code ici
 
-  
 
+
+
+    $('button').click(function(){
+        $('#list ul').html('');   
+        listOfMovie = [];           
+        $.get('./playlist.txt',function(data){  
+
+            splitFile(data).forEach(element => {
+                $('#list ul').append(htmlDivElement(element));
+                listOfMovie.push(element);
+            });
+            console.log(listOfMovie);   
+        });      
+    });
 });
 
 
 function htmlDivElement(name){
-// completer le code ici
+
+    return '<div class="divFilm"><h3>'+name+'</h3></div>';
 }
- 
+
 function splitFile(data){
 
-// completer le code ici
-}
 
+    return data.split('\n');
+
+}
