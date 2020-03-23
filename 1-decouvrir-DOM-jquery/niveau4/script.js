@@ -17,7 +17,7 @@ $(document).ready(function(){
 });
 
 function htmlDivElement(movie){
-  return '<div class="divFilm"><div class="divIndex">'+ movie.index + '</div><div class="divTitle">' + movie.name + '</div><div class="divLength">' + movie.length + '</div><div><button id="playButton'+ movie.index +'">Play</button></div></div>';
+  return '<div class="divFilm"><div class="divIndex">'+ movie.index + '</div><div class="divTitle">' + movie.name + '</div><div class="divLength">' + movie.length + '</div><div class="playButton"><button id="playButton'+ movie.index +'">Play</button></div></div>';
 }
 
 function createPlayCallback(movie){
@@ -26,11 +26,11 @@ function createPlayCallback(movie){
   });
 }
  
-function createMovie(i, n, l){
+function createMovie(i, n, d){
   var movie = {                                       
     index : i,
     name : n,
-    length : l
+    length : d
   };
 
 return movie;
